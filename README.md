@@ -1,2 +1,2 @@
 # usb-ruler
-Dùng để mở công usb phục vụ nạp code st-link, usb
+This project is used open ttyUSB0 that help upload code in stm board
