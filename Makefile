@@ -9,3 +9,5 @@ all: install $(FILE_RULES)
 
 install:
 	@cp $(FILE_RULES) /etc/udev/rules.d
+debug:
+	@sudo apt remove brltty 
