@@ -9,7 +9,7 @@ This project is used open ttyUSB0 that help upload code in stm board
 
 **Step 3:** 
 ```
-	cd USB-RULER
+	cd usb-reler
 	sudo make
 ```
 
