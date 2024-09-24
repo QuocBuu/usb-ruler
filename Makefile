@@ -5,7 +5,7 @@
 
 FILE_RULES = 50-usb-conf.rules
 
-all: install $(FILE_RULES)
+all: install $(FILE_RULES) debug
 
 install:
 	@cp $(FILE_RULES) /etc/udev/rules.d
