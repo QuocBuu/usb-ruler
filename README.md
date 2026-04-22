@@ -1,21 +1,14 @@
 # USB RULER
-This project is used open ttyUSB0 that help upload code in stm board
+This project is used to install some helpful USB rules. (ST-link, J-link, uart, arduino)
 
-**Step 1:** Download zip
-
-**Step 2:** Open telminal
-
-	ctrl + alt + T
-
-**Step 3:** 
-```
-	cd usb_ruler
-	sudo make
+## Install and Reload
+``` Shell
+make
 ```
 
-**if "ttyUSB0" don't been used run step 4
-
-**Step 4:** 
-```
-	make debug
+## Have some case USB Device Conflict with brltty
+``` Shell
+# Remove the brltty package
+# Reload udev rules
+make debug
 ```

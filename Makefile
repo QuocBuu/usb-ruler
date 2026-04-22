@@ -3,11 +3,22 @@
 # @date: 29/02/2024
 ###############################################################
 
-FILE_RULES = 50-usb-conf.rules
+FILE_RULES = usb-conf.rules
+UDEV = /etc/udev/rules.d
 
-all: install $(FILE_RULES) debug
+.PHONY: all install reload debug
+all: install reload
 
 install:
-	@cp $(FILE_RULES) /etc/udev/rules.d
+	@echo "Install file ${FILE_RULES} into ${UDEV}"
+	@sudo cp $(FILE_RULES) $(UDEV)
+
+reload:
+	@echo "Reload usb config rules"
+	@sudo udevadm control --reload-rules
+	@sudo udevadm trigger
+
 debug:
-	@sudo apt remove brltty 
+	@echo "Debug: Remove brltty (avoid tty conflict)"
+	@sudo apt remove brltty
+	@$(MAKE) reload
