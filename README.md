@@ -12,9 +12,20 @@ cd usb-ruler
 make
 ```
 
+## Auto Install
+``` Shell
+chmod +x auto.sh
+./install_usb_rules.sh
+```
+
 ## Have some case USB Device Conflict with brltty
 ``` Shell
 # Remove the brltty package
 # Reload udev rules
 make debug
+```
+
+Or use the auto script:
+``` Shell
+./install_usb_rules.sh --remove-brltty
 ```
